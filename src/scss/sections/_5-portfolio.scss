@@ -1,0 +1,41 @@
+.l-portfolio {
+    text-align: center;
+    background-color: #ffdd99;
+    color: #393939;
+}
+
+.l-portfolio__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.l-portfolio__menu-item {
+    margin: 0 0.5rem;
+}
+
+.l-portfolio__row {
+    margin-top: -3rem;
+}
+
+.l-portfolio__column {
+    margin-top: 3rem;
+}
+
+.l-portfolio__card-picture {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.l-portfolio__card-image {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+.l-portfolio__button {
+    margin-top: 4rem;
+}

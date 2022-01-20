@@ -1,0 +1,21 @@
+.b-footer {
+    background-color: #344b8e;
+    padding: 1rem;
+}
+
+.b-footer__menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-footer__menu-link {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 1rem;
+    margin: 0;
+
+    &:hover {
+        color: #30bae7;
+    }
+}

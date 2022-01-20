@@ -1,0 +1,48 @@
+.l-about {
+    background-color: #d74680;
+    color: #ffffff;
+}
+
+.l-about__row {
+    margin-top: -5rem;
+}
+
+.l-about__card {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.l-about__card-sider {
+    margin-right: 3rem;
+}
+
+.l-about__card-content {
+
+}
+
+.l-about__card-picture {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+}
+
+.l-about__card-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.l-about__card-text {
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 340px;
+    }
+}
+
+.l-about__card-position {
+    color: #ffdd99;
+}

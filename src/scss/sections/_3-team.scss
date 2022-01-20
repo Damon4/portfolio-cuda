@@ -1,0 +1,39 @@
+.l-team {
+    background-color: #e7f1f8;
+    color: #3c4761;
+}
+
+.l-team__row {
+    margin-top: -3rem;
+}
+
+.l-team__card {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.l-team__picture {
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.l-team__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: #878787;
+    border-radius: 50%;
+}
+
+.l-team__position {
+    color: #30bae7;
+}
+
+.l-team__description {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}

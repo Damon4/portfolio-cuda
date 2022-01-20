@@ -1,0 +1,24 @@
+section.b-section.container-fluid.l-contact
+    .b-section__header
+        h2.b-section__title GET IN TOUCH
+        p.b-section__description 1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111
+    .l-section__content.container
+        .row.l-contact__row
+            .col.col-lg-8.offset-lg-2
+                form.row.g-4
+                    .col.col-12.col-md-6
+                        .form-floating
+                            input#name.form-control(required type='text' placeholder='Your Name')
+                            label.form-label(for='name') Your Name
+                    .col.col-12.col-md-6
+                        .form-floating
+                            input#email.form-control(required type='text' placeholder='Your Email')
+                            label.form-label(for='email') Your Email
+                    .col.col-12
+                        .form-floating
+                            textarea#message.form-control(required rows='12' placeholder='Your Message')
+                            label.form-label(for='message') Your Message
+                    .col.col-12.text-center
+                        button(type='submit').b-button.b-button--submit SEND MESSAGE
+
+

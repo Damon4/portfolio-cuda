@@ -1,0 +1,58 @@
+.b-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #ffffff;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    border-bottom: 0.25rem solid rgba(0, 0, 0, 0.34);
+    @include transition(filter, box-shadow);
+
+    width: 300px;
+    max-width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(0.95);
+    }
+
+    &:active {
+        filter: brightness(0.9);
+    }
+
+    &:focus:not(:active) {
+        box-shadow: 0 0 0 0.25rem var(--b-button-focus-shadow);
+    }
+}
+
+.b-button--primary {
+    $color: #eb7d4b;
+
+    background-color: $color;
+    --b-button-focus-shadow: #{rgba($color, 0.4)};
+    border-bottom: 4px solid rgba(0, 0, 0, 0.34);
+}
+
+.b-button--secondary {
+    $color: #17c2a4;
+
+    background-color: $color;
+    --b-button-focus-shadow: #{rgba($color, 0.4)};
+    border-bottom: 4px solid rgba(0, 0, 0, 0.34);
+}
+
+.b-button--submit {
+    $color: #30bae7;
+
+    background-color: $color;
+    --b-button-focus-shadow: #{rgba($color, 0.4)};
+    border-bottom: 4px solid rgba(0, 0, 0, 0.34);
+}
