@@ -18,14 +18,14 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
-}
 
-.l-team__image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    background-color: #878787;
-    border-radius: 50%;
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        background-color: #878787;
+        border-radius: 50%;
+    }
 }
 
 .l-team__position {

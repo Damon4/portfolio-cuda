@@ -1,9 +1,26 @@
-mixin progress(percent, color)
-    div(data-percent=percent class=`progress-circle ${percent > 50 && ' progress-circle--over-half'}`, style=`--progress-bar-color: ${color}`)&attributes(attributes)
-        span.progress-circle__value= `${percent}%`
-        .progress-circle__clipper
-            .progress-circle__bar
-            .progress-circle__value-bar
+-
+    var data = [
+        {
+            title: 'HTML / CSS',
+            percent: 90,
+            color: '#d74680',
+        },
+        {
+            title: 'Javascript',
+            percent: 65,
+            color: '#30bae7',
+        },
+        {
+            title: 'React',
+            percent: 70,
+            color: '#15c7a8',
+        },
+        {
+            title: 'Webpack',
+            percent: 75,
+            color: '#eb7d4b',
+        },
+    ]
 
 section.b-section.container-fluid.l-skills
     .b-section__header
@@ -11,19 +28,8 @@ section.b-section.container-fluid.l-skills
         p.b-section__description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     .l-section__content.container
         .row.l-skills__row
-            .col.col-12.col-sm-6.col-md-3.l-skills__column
-                .l-skills__card
-                    +progress(90, '#30bae7').l-skills__progress
-                    h3.h4.l-skills__card-title Web Design
-            .col.col-12.col-sm-6.col-md-3.l-skills__column
-                .l-skills__card
-                    +progress(75, '#d74680').l-skills__progress
-                    h3.h4.l-skills__card-title HTML / CSS
-            .col.col-12.col-sm-6.col-md-3.l-skills__column
-                .l-skills__card
-                    +progress(70, '#15c7a8').l-skills__progress
-                    h3.h4.l-skills__card-title GRAPHIC DESIGN
-            .col.col-12.col-sm-6.col-md-3.l-skills__column
-                .l-skills__card
-                    +progress(85, '#eb7d4b').l-skills__progress
-                    h3.h4.l-skills__card-title UI / UX
+            for item in data
+                .col.col-12.col-sm-6.col-md-3.l-skills__column
+                    .l-skills__card
+                        +progress(item.percent, item.color).l-skills__progress
+                        h3.h4.l-skills__card-title= item.title

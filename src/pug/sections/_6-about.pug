@@ -1,44 +1,43 @@
+-
+    var data = [
+        {
+            name: 'Chanel Iman',
+            position: 'CEO of Pinterest',
+            image: './images/team/v3_0226318.jpg',
+            text: '“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”'
+        },
+        {
+            name: 'Anne Hathaway',
+            position: 'Lead Designer at Behance',
+            image: './images/team/v3_0033536.jpg',
+            text: '“Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”'
+        },
+        {
+            name: 'Adriana Lima',
+            position: 'Founder of Instagram',
+            image: './images/team/v3_0227647.jpg',
+            text: '“Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”'
+        },
+        {
+            name: 'Emma Stone',
+            position: 'SEO / Developer',
+            image: './images/team/v3_0327101.jpg',
+            text: '“Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus sem cursus neque.”'
+        },
+    ]
+
 section.b-section.container-fluid.l-about
     .b-section__header
         h2.b-section__title WHAT POEPLE SAY ABOUT US
         p.b-section__description Our clients love us!
     .l-section__content.container
         .row.l-about__row
-            .col.col-12.col-lg-6.l-about__column
-                .l-about__card
-                    .l-about__card-sider
-                        picture.l-about__card-picture
-                            img.l-about__card-image(src="./images/team/v3_0226318.jpg" alt="")
-                    .l-about__card-content
-                        p.h5.l-about__card-text “Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”
-                        h3.h5.l-about__card-name Chanel Iman
-                        .l-about__card-position CEO of Pinterest
-            .col.col-12.col-lg-6.l-about__column
-                .l-about__card
-                    .l-about__card-sider
-                        picture.l-about__card-picture
-                            img.l-about__card-image(src="./images/team/v3_0033536.jpg" alt="")
-                    .l-about__card-content
-                        p.h5.l-about__card-text “Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”
-                        h3.h5.l-about__card-name ADRIANA LIMA
-                        .l-about__card-position Founder of Instagram
-            .col.col-12.col-lg-6.l-about__column
-                .l-about__card
-                    .l-about__card-sider
-                        picture.l-about__card-picture
-                            img.l-about__card-image(src="./images/team/v3_0227647.jpg" alt="")
-                    .l-about__card-content
-                        p.h5.l-about__card-text “Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta.”
-                        h3.h5.l-about__card-name Anne Hathaway
-                        .l-about__card-position Lead Designer at Behance
-            .col.col-12.col-lg-6.l-about__column
-                .l-about__card
-                    .l-about__card-sider
-                        picture.l-about__card-picture
-                            img.l-about__card-image(src="./images/team/v3_0327101.jpg" alt="")
-                    .l-about__card-content
-                        p.h5.l-about__card-text “Phasellus non purus vel arcu tempor commodo. Fusce semper, purus vel luctus molestie, risus sem cursus neque.”
-                        h3.h5.l-about__card-name EMMA STONE
-                        .l-about__card-position Co-Founder of Shazam
-
-
+            for item in data
+                .col.col-12.col-lg-6.l-about__column
+                    .l-about__card
+                        .l-about__card-sider
+                            +picture(item.image, {webp: true, avif: true}).l-about__card-picture
+                        .l-about__card-content
+                            p.h5.l-about__card-text= item.text
+                            h3.h5.l-about__card-name= item.name
+                            .l-about__card-position= item.position

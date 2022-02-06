@@ -1,50 +1,41 @@
+-
+    var data = [
+        {
+            name: 'Anne Hathaway',
+            position: 'CEO / Marketing Guru',
+            image: './images/team/v3_0226318.jpg',
+            description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod'
+        },
+        {
+            name: 'Kate Upton',
+            position: 'Creative Director',
+            image: './images/team/v3_0227647.jpg',
+            description: 'Duis aute irure dolor in in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat non diam proident.'
+        },
+        {
+            name: 'Olivia Wilde',
+            position: 'Lead Designer',
+            image: './images/team/v3_0033536.jpg',
+            description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod'
+        },
+        {
+            name: 'Ashley Greene',
+            position: 'SEO / Developer',
+            image: './images/team/v3_0327101.jpg',
+            description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
+        },
+    ]
+
 section#team.b-section.container-fluid.l-team
     .b-section__header
         h2.b-section__title MEET OUR BEAUTIFUL TEAM
         p.b-section__description We are a small team of designers and developers, who help brands with big ideas.
     .l-section__content.container
         .row.l-team__row
-            .col.col-12.col-sm-6.col-md-3.l-team__column
-                .l-team__card
-                    picture.l-team__picture
-                        img.l-team__image(src="./images/team/v3_0226318.jpg" alt="")
-                    h3.l-team__name Anne Hathaway
-                    p.l-team__position CEO / Marketing Guru
-                    p.l-team__description
-                        | Lorem ipsum dolor sit amet,
-                        | consectetuer adipiscing elit,
-                        | sed diam nonummy nibh euismod
-                        | tincidunt ut laoreet dolore magna.
-            .col.col-12.col-sm-6.col-md-3.l-team__column
-                .l-team__card
-                    picture.l-team__picture
-                        img.l-team__image(src="./images/team/v3_0227647.jpg" alt="")
-                    h3.l-team__name Kate Upton
-                    p.l-team__position Creative Director
-                    p.l-team__description
-                        | Duis aute irure dolor in in
-                        | voluptate velit esse cillum
-                        | dolore fugiat nulla pariatur.
-                        | Excepteur sint occaecat non diam proident.
-            .col.col-12.col-sm-6.col-md-3.l-team__column
-                .l-team__card
-                    picture.l-team__picture
-                        img.l-team__image(src="./images/team/v3_0033536.jpg" alt="")
-                    h3.l-team__name Olivia Wilde
-                    p.l-team__position Lead Designer
-                    p.l-team__description
-                        | Lorem ipsum dolor sit amet,
-                        | consectetuer adipiscing elit,
-                        | sed diam nonummy nibh euismod
-                        | tincidunt ut laoreet dolore magna.
-            .col.col-12.col-sm-6.col-md-3.l-team__column
-                .l-team__card
-                    picture.l-team__picture
-                        img.l-team__image(src="./images/team/v3_0327101.jpg" alt="")
-                    h3.l-team__name Ashley Greene
-                    p.l-team__position SEO / Developer
-                    p.l-team__description
-                        | Sed ut perspiciatis unde omnis
-                        | iste natus error sit voluptatem
-                        | accusantium doloremque laudantium,
-                        | totam rem aperiam.
+            for item in data
+                .col.col-12.col-sm-6.col-md-3.l-team__column
+                    .l-team__card
+                        +picture(item.image, {webp: true, avif: true}).l-team__picture
+                        h3.l-team__name= item.name
+                        p.l-team__position= item.position
+                        p.l-team__description= item.description

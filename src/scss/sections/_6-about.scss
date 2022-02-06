@@ -24,13 +24,13 @@
     display: block;
     width: 6rem;
     height: 6rem;
-}
 
-.l-about__card-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
 }
 
 .l-about__card-text {

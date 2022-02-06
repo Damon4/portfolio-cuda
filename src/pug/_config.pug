@@ -1,0 +1,32 @@
+mixin progress(percent, color)
+    div(data-percent=percent class=`progress-circle ${percent > 50 && ' progress-circle--over-half'}`, style=`--progress-bar-color: ${color}`)&attributes(
+        attributes)
+        span.progress-circle__value= `${percent}%`
+        .progress-circle__clipper
+            .progress-circle__bar
+            .progress-circle__value-bar
+
+mixin picture(filename, opts)
+    - var name = filename.split('/').pop();
+    - var extension = filename.split('.').pop();
+    - var path = filename.slice(0, filename.lastIndexOf('/'));
+    - var basename = name.slice(0, name.lastIndexOf('.'));
+    - var retinaTag = '@2x';
+    - var options = Object.assign({retina: false, webp: false, avif: false, lazy: false}, opts)
+    picture.image&attributes(attributes)
+        if options.avif
+            if options.retina
+                source(srcset=`${path}/${basename}${retinaTag}.${extension}.avif 2x, ${path}/${basename}.${extension}.avif 1x`, type='image/avif')
+            else
+                source(srcset=`${path}/${basename}.${extension}.avif`, type='image/avif')
+        if options.webp
+            if options.retina
+                source(srcset=`${path}/${basename}${retinaTag}.${extension}.webp 2x, ${path}/${basename}.${extension}.webp 1x`, type='image/webp')
+            else
+                source(srcset=`${path}/${basename}.${extension}.webp`, type='image/webp')
+        if (options.retina)
+            source(srcset=`${path}/${basename}${retinaTag}.${extension} 2x, ${path}/${basename}.${extension} 1x`)
+        if options.lazy
+            img(src=filename, loading='lazy', width=options.width, height=options.height, alt='')
+        else
+            img(src=filename, decoding="async", loading=loading, width=options.width, height=options.height, alt='')
